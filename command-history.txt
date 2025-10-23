@@ -44,4 +44,21 @@ Docker Demo Steps
 
 
 VM DEPLOYMENT:
+- ssh
+- mkdir docker-demo
+- curl -fsSL https://get.docker.com -o get-docker.sh  (install docker without permissions for automation script)
+- sudo sh get-docker.sh
+- git clone repo and cd inside
+- sudo docker compose up -d --build
+- sudo docker ps
+To allow port 8080:
+- sudo ufw status
+- sudo ufw allow ssh (allow ssh connections to avoid lockout to VM)
+- sudo ufw enable    (enable firewall)
+- sudo ufw allow 8080
+- sudo ufw status verbose
+
+DONE!
+
+Automation Script:
 ...
