@@ -1,0 +1,47 @@
+Docker Demo Steps
+
+1. Project setup
+- npm init es6
+- npm i express
+- npm i nodemon --save-dev
+- touch server.js (fill basic server)
+
+2. Define project
+- in express add const HOST = '0.0.0.0'; and use HOST in server start url
+- in package.json under scripts add "start": "node server.js"
+
+3. Docker files
+- create Dockerfile (exactly like that)
+      Fill:
+      FROM node:lts-alpine: Start with a base Node.js image.
+      WORKDIR /app: Set the internal directory.
+      COPY package*.json ./: Copy package files first (for caching).
+      RUN npm install: Install dependencies inside the container.
+      COPY . .: Copy all your app code (like server.js).
+      EXPOSE 8080: Document which port the app uses internally.
+      CMD ["npm", "start"]: The default command to run.
+- create .dockerignore
+      Fill:
+      node_modules
+      .git
+      .gitignore
+
+4. Manual Docker Workflow
+- docker build -t my-app-name .                                 (build image from Dockerfile)
+- docker run -d -p 8080:8080 --name container-name my-app-name  (run image as new container)
+- docker ps                                                     (list all running containers)
+- docker stop my-running-app                                    (stop)
+- docker start my-running-app                                   (start)
+- docker rm -f my-running-app                                   (delete)
+
+5. Docker Compose YML Workflow (recommended)
+- docker-compose.yml        (single file to define and orchestrate/automate process)
+- docker-compose up         (build and run)
+- docker-compose up -d      (build and run detached, shell is free to use)
+- docker-compose start/stop (start/stop)
+- docker-compose down       (stop and remove container/ nuke)
+
+
+
+VM DEPLOYMENT:
+...
