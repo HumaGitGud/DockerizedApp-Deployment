@@ -1,0 +1,17 @@
+# Docker compose version of the file syntax
+version: '3.8'
+
+# All containers are defined under 'services'
+services:
+  
+  # Name of the service (it can be anything)
+  app:
+    # "Build the image from the Dockerfile in the current directory (.)"
+    build: .
+    
+    # Give the running container a consistent name
+    container_name: my-running-app
+    
+    # Map computers port 8080 to the containers port 8080
+    ports:
+      - "8080:8080"
