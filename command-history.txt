@@ -60,5 +60,8 @@ To allow port 8080:
 
 DONE!
 
-Automation Script:
-...
+Automation Script (VM):
+- mkdir proj and cd
+- nano setup_and_deploy.sh      (copy paste script inside it)
+- chmod +x setup_and_deploy.sh  (make it executable)
+- ./setup_and_deploy.sh         (run script)
