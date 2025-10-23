@@ -1,4 +1,5 @@
-# Setup and Deploy script
+# Setup and Deploy script 
+# Run in VM using nano
 
 #!/bin/bash
 set -e
