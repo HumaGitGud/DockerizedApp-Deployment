@@ -1,0 +1,6 @@
+# Dont copy local development dependencies
+node_modules
+
+# Dont copy system files
+.git
+.gitignore
